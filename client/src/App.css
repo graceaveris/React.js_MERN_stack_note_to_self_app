@@ -1,0 +1,101 @@
+.App {
+  text-align: center;
+  font-family: "Century Gothic", CenturyGothic;
+  background-color: #0D0C12;
+  min-height: 100vh;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 20vmin;
+  float: left
+}
+
+.App-header {
+  background-color: #0D0C12;
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.btn {
+  border: 2px solid white;
+  border-radius: 0px;
+  margin-top: 10px;
+  margin-bottom: 35px;
+}
+
+.mainbtn {
+  border: 2px solid white;
+  borderRadius: 0px;
+  margin: 20px;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.textfield {
+  width: 80%;
+  font-size: 14px;
+}
+
+.form {
+  background-color: grey;
+  padding: 5%;
+}
+
+.note {
+  background-color: grey;
+  margin: 15px;
+  padding: 4%;
+  display: inline-block;
+  max-width: 30%;
+}
+
+.note-container {
+display: flex;
+}
+
+h1 {
+  color: #8a83c6;
+  font-size: calc(10px + 6vmin);
+}
+
+h2 {
+  color: white;
+  font-size: calc(10px + 2vmin);
+}
+
+h3 {
+  color: white;
+  font-size: calc(3px + 4vmin);
+  line-height: 0px;
+    color: pink;
+}
+
+p {
+  font-size: calc(4px + 2vmin); 
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  font-size: calc(4px + 2vmin);
+  line-height: 10px;
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
