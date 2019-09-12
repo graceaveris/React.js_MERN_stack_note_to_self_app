@@ -28,11 +28,20 @@ router.post('/', (req, res) => {
 // DELETE = DELETE A NOTE FROM THE DB
 // we add the property param:id
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', (req, res) => { 
   Note.findById(req.params.id)
   .then(item => item.remove().then(() => res.json({ success: true })))
   .catch(err => res.status(404).json({ success: false }));
 });
+
+
+// UPDATE = UPDATE A NOTE IN THE DB
+
+router.patch('/:id', (req, res) => {
+  Note.findById(req.params.id)
+  .then(item => item.update({ content: req.body.content }));
+});
+
 
 // we cant use 'export default' in this particular file
 module.exports = router;

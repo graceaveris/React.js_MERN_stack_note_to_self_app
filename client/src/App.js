@@ -3,14 +3,21 @@ import './App.css';
 import axios from 'axios';
 import Note from './components/note.js';
 import Form from './components/form.js';
+import EditBox from './components/editBox.js';
 
 
 class App extends Component {
 
   state = {
     notes: [],
-    dataLoaded: false
+   
+    dataLoaded: false,
+    
+    toggleEditBox: false,
+    noteToEdit: null,
+    noteToEditContent: null
   }
+
 
 //CDM which triggers first load
  componentDidMount() {
@@ -48,8 +55,19 @@ async deleteNote(_id)  {
  this.loadData()
 }
 
-async updateNote(_id) {
+
+triggerEditBox(_id, content) {
+  this.setState({ toggleEditBox: true, noteToEdit: _id, noteToEditContent: content})
 }
+
+
+async updateNote(_id, newNoteContent) {
+  const updatedNote = {
+    content: newNoteContent
+  }
+ await axios.patch(('http://localhost:5000/'+ _id), updatedNote)
+}
+
 
  render() {
 
@@ -63,6 +81,7 @@ async updateNote(_id) {
     <Note
       content={note.content}
       deleteNote={() => this.deleteNote(note._id)}
+      triggerEditBox={() => this.triggerEditBox(note._id, note.content)}
     />)}
 
    </div>)
@@ -71,11 +90,21 @@ async updateNote(_id) {
   }
 
 
+//editbox screen trigger
+  let editBox;
+
+  if (this.state.toggleEditBox) {
+    editBox = <EditBox 
+    content={this.state.noteToEditContent}
+    updateNote={(_id, newNoteContent) => this.updateNote(this.state.noteToEdit, 'balls')}/>
+  }
+
   return (
     <div className="App">
       
       <Form onSubmit={(noteContent) => this.addNote(noteContent)}/>
       <div className='note-container'>{notes}</div>
+      {editBox}
     
     </div>
    );

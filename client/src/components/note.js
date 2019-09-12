@@ -4,12 +4,12 @@ const Note = (props) => {
   return (
       
       <div className='note'>
-      <h2>
+      <p>
         {props.content}
-      </h2>
+      </p>
 
-      <p onClick={() => props.deleteNote(props._id)}>X</p>
-      <p> edit note</p>
+      <p onClick={() => props.deleteNote()}>X</p>
+      <p onClick={() => props.triggerEditBox()}>Edit</p>
      </div>
   )
 }
