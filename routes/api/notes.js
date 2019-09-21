@@ -16,7 +16,7 @@ router.get('/notes', (req, res) => {
 });
 
 // POST = ADD A NOTE TO THE DB
-// as the root of the route 'api/notes' is already defined in the server.js we dont need to have here
+// as the root of the route '/notes' is already defined in the server.js we dont need to have here
 
 router.post('/', (req, res) => {
   const newNote = new Note({
@@ -34,14 +34,12 @@ router.delete('/:id', (req, res) => {
   .catch(err => res.status(404).json({ success: false }));
 });
 
-
 // UPDATE = UPDATE A NOTE IN THE DB
 
 router.patch('/:id', (req, res) => {
   Note.findById(req.params.id)
-  .then(item => item.update({ content: req.body.content }));
+  .then(item => item.update({ content: req.body.content }).then(() => res.json({ success: true })))
 });
-
 
 // we cant use 'export default' in this particular file
 module.exports = router;

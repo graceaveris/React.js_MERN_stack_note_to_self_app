@@ -4,25 +4,34 @@ import React from 'react';
 class Form extends React.Component {
   
   state = {
-    noteToAdd: ''
+    noteToAdd: '',
   }
+ 
+  onSubmit() {
+   this.props.onSubmit(this.state.noteToAdd)
+   this.setState({ noteToAdd: ''})
+  } 
   
   render() {
 
   return (
   <div className='form'>
-     <h2>Hey Grace, what's up?</h2>
-          <input 
-            type="text"
-            className="textfield"
-            placeholder="Type note to self"
-            onChange={e => this.setState({ noteToAdd: e.target.value})}  />
+    <h2>Hey Grace, what's up?</h2>
+      <input 
+        type="text"
+        className="textfield"
+        value={this.state.noteToAdd}
+        placeholder="Type Note to Self"
+        onChange={e => this.setState({ noteToAdd: e.target.value})}  
+      />
           
-        <div> 
-           <button 
-             onClick={() => this.props.onSubmit(this.state.noteToAdd)}>Add Post-it
-           </button>
-        </div>
+      <div> 
+        <button
+          className="main-btn"
+          onClick={() => this.onSubmit()}>Add Note to Self
+        </button>
+      </div>
+      
     </div>
 
     );

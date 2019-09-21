@@ -2,11 +2,7 @@
   text-align: center;
   font-family: "Century Gothic", CenturyGothic;
   background-color: #0D0C12;
-  min-height: 100vh;
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  font-size: calc(10px + 2vmin);
+  min-height: 120vh;
   color: white;
 }
 
@@ -16,50 +12,67 @@
   float: left
 }
 
-.App-header {
-  background-color: #0D0C12;
-  margin-top: 80px;
-  display: flex;
-  align-items: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.btn {
-  border: 2px solid white;
-  border-radius: 0px;
-  margin-top: 10px;
-  margin-bottom: 35px;
-}
-
-.mainbtn {
-  border: 2px solid white;
-  borderRadius: 0px;
-  margin: 20px;
-  display: inline-block;
-  font-size: 14px;
-}
-
 .textfield {
   width: 80%;
-  font-size: 14px;
+  font-size: 16px;
+  margin: 15px;
 }
 
 .form {
-  background-color: grey;
   padding: 5%;
+}
+
+.note-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 100px;
 }
 
 .note {
   background-color: grey;
-  margin: 15px;
-  padding: 4%;
-  display: inline-block;
-  max-width: 30%;
+  margin: 10px;
+  padding: 2%;
+  min-width: 12%;
+  max-width: 23%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.note-container {
-display: flex;
+.button-container {
+  padding: 5px;
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
+
+.edit-form-background {
+ position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 30;
+}
+
+.edit-form {
+  position: fixed;
+  background-color: #8a83c6;
+  width: 60%;
+  margin: 15%;
+  padding: 5%;
+}
+
+.main-btn {
+  font-size: 14px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.main-btn:hover {
+  background-color: #CCC8E6;
+
 }
 
 h1 {
@@ -76,20 +89,19 @@ h3 {
   color: white;
   font-size: calc(3px + 4vmin);
   line-height: 0px;
-    color: pink;
+  color: pink;
 }
 
 p {
   font-size: calc(4px + 2vmin); 
 }
 
-ul {
-  list-style-type: none;
-  padding-left: 0;
-  font-size: calc(4px + 2vmin);
-  line-height: 10px;
+button {
+  padding: 8px;
+  margin: 4px;
+  border-style: none;
+  border-radius: 20px;
 }
-
 
 @keyframes App-logo-spin {
   from {
