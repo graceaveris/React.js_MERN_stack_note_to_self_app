@@ -98,8 +98,16 @@ class App extends Component {
 
   //RETURN BLOCK
   return (
-   
+
+
     <div className="App"> 
+
+     <header className="App-header">
+        <h1>30 days of React</h1>
+        <h2>Day Twenty Nine / Full-stack MERN App</h2>
+      </header>
+   
+
       {editBox}
       <Form onSubmit={(noteContent) => this.addNote(noteContent)}/>
       {notes}

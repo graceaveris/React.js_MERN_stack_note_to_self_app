@@ -12,7 +12,7 @@ render() {
   <div className="edit-form-background">
     <div className="edit-form">
         
-      <label> Update Note: </label><br />
+      <h2> Update Note: </h2><br />
         <input 
           type="text"
           className="textfield"
@@ -21,6 +21,7 @@ render() {
         /><br />
             
         <button
+          className="main-btn"
           onClick={() => this.props.updateNote(this.props._id, this.state.content)}>Update
         </button>
     
