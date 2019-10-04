@@ -1,7 +1,7 @@
 **Day Twenty Nine - 30 days of React challenge - Completed MERN stack 'note to self' app**
 
 Added the React.js frontend to the backend I created in my last project. It is now a fully functional full stack MERN app.
-Add notes to to the database, delete, and update!
+Add notes to to the database, delete, and update! 
 
 **Concepts Explored:**
 
